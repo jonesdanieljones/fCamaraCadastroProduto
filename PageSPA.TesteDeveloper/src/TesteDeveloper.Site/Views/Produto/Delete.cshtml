@@ -1,4 +1,4 @@
-@model TesteDeveloperApplication.ViewModels.EventoViewModel
+@model TesteDeveloper.Application.ViewModels.ProdutoViewModel
 
 @{
     ViewData["Title"] = "Delete";
@@ -19,65 +19,41 @@
             @Html.DisplayFor(model => model.Nome)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DescricaoCurta)
+            @Html.DisplayNameFor(model => model.Modelo)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DescricaoCurta)
+            @Html.DisplayFor(model => model.Modelo)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DescricaoLonga)
+            @Html.DisplayNameFor(model => model.QtdEstoque)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DescricaoLonga)
+            @Html.DisplayFor(model => model.QtdEstoque)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DataInicio)
+            @Html.DisplayNameFor(model => model.QtdEstoqueMin)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DataInicio)
+            @Html.DisplayFor(model => model.QtdEstoqueMin)
         </dd>
         <dt>
-            @Html.DisplayNameFor(model => model.DataFim)
+            @Html.DisplayNameFor(model => model.Status)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.DataFim)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Gratuito)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Gratuito)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Valor)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Valor)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Online)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Online)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeEmpresa)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.NomeEmpresa)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.OrganizadorId)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.OrganizadorId)
+            @Html.DisplayFor(model => model.Status)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Categoria)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Categoria.Id)
+            @Html.DisplayFor(model => model.Categoria)
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.SubCategoria)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SubCategoriaId)
+        </dd>              
     </dl>
     
     <form asp-action="Delete">

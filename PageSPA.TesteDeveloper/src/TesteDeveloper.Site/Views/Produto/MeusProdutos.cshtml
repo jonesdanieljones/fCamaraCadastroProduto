@@ -1,10 +1,21 @@
 ﻿@model IEnumerable<TesteDeveloper.Application.ViewModels.ProdutoViewModel>
 
 @{
-    ViewData["Title"] = "Lista de Produtos";
+    ViewData["Title"] = "Meus Produtos";
 }
 
 <h2>@ViewData["Title"]</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+            <a asp-action="Create" class="btn btn-primary">
+                <span title="Novo Produto" class="glyphicon glyphicon-plus-sign"></span> Novo Evento
+            </a>
+        </div>
+    </div>
+</div>
+<br />
 
 <table class="table">
     <thead>
@@ -14,16 +25,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Categoria.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SubCategoria.Nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Fabricante.Nome)
-            </th>
+            </th>           
             <th></th>
         </tr>
     </thead>
@@ -37,17 +39,15 @@
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Categoria.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SubCategoria.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Fabricante.Nome)
-            </td>
-            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
                 <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-primary">
-                    <span class="glyphicon glyphicon-search"></span> Ver Detalhes
+                    <span class="glyphicon glyphicon-search"></span>
+                </a>
+
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-trash"></span>
                 </a>
             </td>
         </tr>

@@ -1,42 +1,25 @@
-﻿@using TesteDeveloperApplication.ViewModels
-@model EventoViewModel
+﻿@using TesteDeveloper.Application.ViewModels
+@model ProdutoViewModel
 
 @{
     ViewData["Title"] = @Model.Nome;
 }
 <div class="jumbotron">
     <h2>@ViewData["Title"]</h2>
-    <h4>@Model.DescricaoCurta</h4>
+    <h4>@Model.Nome</h4>
 </div>
 
 <div class="container">
     <div>
         <div class="row">
-            @Html.DisplayFor(modelItem => Model.DescricaoLonga)
+            @Html.DisplayFor(modelItem => Model.Modelo)
         </div>
         <hr />
+        <br />        
+        <br />        
         <br />
         <div class="row">
-            <b>Quando:</b><br />
-            @Model.DataInicio.ToString("d") até @Model.DataFim.ToString("d")
-        </div>
-        <br />
-        <div class="row">
-            <b>Valor:</b><br />
-            @{
-                if (Model.Gratuito)
-                {
-                    @Html.DisplayName("Gratuito")
-                }
-                else
-                {
-                    @Html.DisplayFor(modelItem => Model.Valor)
-                }
-            }
-        </div>
-        <br />
-        <div class="row">
-            <b>Tipo de Evento:</b><br />
+            <b>Tipo de Categoria:</b><br />
             @{
                 var categoria = new CategoriaViewModel().ListarCategorias().FirstOrDefault(c => c.Id == Model.CategoriaId);
                 @Html.Raw(categoria.Nome)
@@ -44,23 +27,18 @@
         </div>
         <br />
         <div class="row">
-            <b>Organizado por:</b><br />
-            @Html.DisplayFor(modelItem => Model.NomeEmpresa)
+            <b>Tipo de SubCategoria:</b><br />
+            @{
+                var subCategoria = new SubCategoriaViewModel().ListarSubCategorias().FirstOrDefault(c => c.Id == Model.SubCategoriaId);
+                @Html.Raw(categoria.Nome)
+            }
         </div>
         <br />
         <div class="row">
-            <b>Onde?</b><br />
-            @{
-                if (Model.Online)
-                {
-                    @Html.DisplayName("Evento Online")
-                }
-                else
-                {
-                    <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=@Model.Endereco.ToString()&key=AIzaSyAP0WKpL7uTRHGKWyakgQXbW6FUhrrA5pE" allowfullscreen></iframe>
-                }
-            }
+            <b>Fabricante por:</b><br />
+            @Html.DisplayFor(modelItem => Model.Fabricante.Nome)
         </div>
+        <br />
     </div>
 
     <div>
