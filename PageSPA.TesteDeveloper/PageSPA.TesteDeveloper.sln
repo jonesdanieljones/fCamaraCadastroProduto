@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Domain", "4 - Domain", "{B05B3762-A553-4CA5-8887-AC65CF575705}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteDeveloper.Infra.CrossCutting.AspNetFilters", "src\TesteDeveloper.Infra.CrossCutting.AspNetFilters\TesteDeveloper.Infra.CrossCutting.AspNetFilters.csproj", "{F2D79A60-FA02-4BF7-A1ED-16FA50F5A092}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteDeveloper.Services.Api", "src\TesteDeveloper.Services.Api\TesteDeveloper.Services.Api.csproj", "{F31B6205-9553-4D0A-95AD-D8C146836205}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TesteDeveloper.Site", "src\TesteDeveloper.Site\TesteDeveloper.Site.csproj", "{E53781D8-074E-43EE-9606-CBAF6E12D197}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{F31B6205-9553-4D0A-95AD-D8C146836205}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F31B6205-9553-4D0A-95AD-D8C146836205}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F31B6205-9553-4D0A-95AD-D8C146836205}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E53781D8-074E-43EE-9606-CBAF6E12D197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E53781D8-074E-43EE-9606-CBAF6E12D197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E53781D8-074E-43EE-9606-CBAF6E12D197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E53781D8-074E-43EE-9606-CBAF6E12D197}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -93,5 +99,6 @@ Global
 		{73276068-3CDA-4B71-8740-1ED979D3AF27} = {D9378E0D-0E5F-4D65-AEA2-72103663C808}
 		{F2D79A60-FA02-4BF7-A1ED-16FA50F5A092} = {D9378E0D-0E5F-4D65-AEA2-72103663C808}
 		{F31B6205-9553-4D0A-95AD-D8C146836205} = {16E22E29-00CF-41DE-AD35-D7CFEF862FCA}
+		{E53781D8-074E-43EE-9606-CBAF6E12D197} = {2C861BDE-E979-4D4C-A55B-DB8FB4C117BB}
 	EndGlobalSection
 EndGlobal

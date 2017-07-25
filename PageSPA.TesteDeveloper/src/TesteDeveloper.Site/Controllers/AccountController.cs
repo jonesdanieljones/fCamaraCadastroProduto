@@ -2,13 +2,7 @@
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using TesteDeveloperApplication.Interfaces;
-using TesteDeveloperApplication.ViewModels;
-using TesteDeveloper.Core.Notifications;
-using TesteDeveloper.Interfaces;
-using TesteDeveloperInfra.CrossCutting.Identity.Models;
-using TesteDeveloperInfra.CrossCutting.Identity.Models.AccountViewModels;
-using TesteDeveloperInfra.CrossCutting.Identity.Services;
+using TesteDeveloper.Domain.Core.Notifications;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -16,8 +10,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using TesteDeveloper.Infra.CrossCutting.Identity.Models;
+using TesteDeveloper.Infra.CrossCutting.Identity.Services;
+using TesteDeveloper.Domain.Interfaces;
+using TesteDeveloper.Infra.CrossCutting.Identity.Models.AccountViewModels;
 
-namespace TesteDeveloperSite.Controllers
+namespace TesteDeveloper.Site.Controllers
 {
     [Authorize]
     public class AccountController : BaseController
@@ -27,8 +25,7 @@ namespace TesteDeveloperSite.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
-        private readonly string _externalCookieScheme;
-        private readonly IOrganizadorAppService _organizadorAppService;
+        private readonly string _externalCookieScheme;       
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
@@ -37,16 +34,14 @@ namespace TesteDeveloperSite.Controllers
             IEmailSender emailSender,
             ISmsSender smsSender,
             ILoggerFactory loggerFactory,
-            IDomainNotificationHandler<DomainNotification> notifications, 
-            IOrganizadorAppService organizadorAppService,
+            IDomainNotificationHandler<DomainNotification> notifications,             
             IUser user) : base(notifications, user)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _externalCookieScheme = identityCookieOptions.Value.ExternalCookieAuthenticationScheme;
             _emailSender = emailSender;
-            _smsSender = smsSender;
-            _organizadorAppService = organizadorAppService;
+            _smsSender = smsSender;            
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
 
@@ -129,6 +124,7 @@ namespace TesteDeveloperSite.Controllers
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    /*
                     var organizador = new OrganizadorViewModel
                     {
                         Id = Guid.Parse(user.Id),
@@ -138,7 +134,7 @@ namespace TesteDeveloperSite.Controllers
                     };
 
                     _organizadorAppService.Registrar(organizador);
-
+                    */
                     if (!OperacaoValida())
                     {
                         await _userManager.DeleteAsync(user);
@@ -164,7 +160,7 @@ namespace TesteDeveloperSite.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation(4, "User logged out.");
-            return RedirectToAction(nameof(EventosController.Index), "Eventos");
+            return RedirectToAction(nameof(ProdutosController.Index), "Eventos");
         }
 
         //
@@ -492,7 +488,7 @@ namespace TesteDeveloperSite.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(EventosController.Index), "Eventos");
+                return RedirectToAction(nameof(ProdutosController.Index), "Eventos");
             }
         }
 

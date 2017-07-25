@@ -1,15 +1,15 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using TesteDeveloperInfra.CrossCutting.Identity.Models;
-using TesteDeveloperInfra.CrossCutting.Identity.Models.ManageViewModels;
-using TesteDeveloperInfra.CrossCutting.Identity.Services;
+using TesteDeveloper.Infra.CrossCutting.Identity.Models;
+using TesteDeveloper.Infra.CrossCutting.Identity.Models.ManageViewModels;
+using TesteDeveloper.Infra.CrossCutting.Identity.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace TesteDeveloperSite.Controllers
+namespace TesteDeveloper.Site.Controllers
 {
     [Authorize]
     public class ManageController : Controller

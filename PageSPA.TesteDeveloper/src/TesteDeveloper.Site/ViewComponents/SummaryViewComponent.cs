@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using TesteDeveloper.Core.Notifications;
+using TesteDeveloper.Domain.Core.Notifications;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TesteDeveloperSite.ViewComponents

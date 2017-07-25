@@ -39,7 +39,7 @@ namespace TesteDeveloper.Infra.CrossCutting.IoC
             services.AddScoped<IHandler<RegistrarProdutoCommand>, ProdutoCommandHandler>();
             services.AddScoped<IHandler<AtualizarProdutoCommand>, ProdutoCommandHandler>();
             services.AddScoped<IHandler<ExcluirProdutoCommand>, ProdutoCommandHandler>();                                  
-            // Domain - Eventos
+            // Domain - Produtos
             services.AddScoped<IDomainNotificationHandler<DomainNotification>, DomainNotificationHandler>();
             services.AddScoped<IHandler<ProdutoRegistradoEvent>, ProdutoEventHandler>();
             services.AddScoped<IHandler<ProdutoAtualizadoEvent>, ProdutoEventHandler>();

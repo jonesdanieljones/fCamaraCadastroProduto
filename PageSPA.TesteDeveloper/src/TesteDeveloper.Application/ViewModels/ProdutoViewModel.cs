@@ -24,26 +24,27 @@ namespace TesteDeveloper.Application.ViewModels
         }
         [Key]
         public Guid Id { get; set; }
-
-        public CategoriaViewModel Categoria { get; private set; }
-        public SubCategoriaViewModel SubCategoria { get; private set; }
-        public FabricanteViewModel Fabricante { get; private set; }
+        
+        public CategoriaViewModel Categoria { get;  set; }
+        public SubCategoriaViewModel SubCategoria { get;  set; }
+        public FabricanteViewModel Fabricante { get;  set; }
         [Required(ErrorMessage = "O Modelo é requerido")]
         [MinLength(2, ErrorMessage = "O tamanho minimo do Nome é {1}")]
         [MaxLength(150, ErrorMessage = "O tamanho máximo do Nome é {1}")]
         [Display(Name = "Modelo do Produto")]
-        public string Modelo { get; private set; }
+        public string Modelo { get;  set; }
         [Required(ErrorMessage = "O Nome é requerido")]
         [MinLength(2, ErrorMessage = "O tamanho minimo do Nome é {1}")]
         [MaxLength(150, ErrorMessage = "O tamanho máximo do Nome é {1}")]
         [Display(Name = "Nome do Produto")]
-        public string Nome { get; private set; }
-        public int QtdEstoque { get; private set; }
-        public int QtdEstoqueMin { get; private set; }
-        public bool Status { get; private set; }
-        public Guid? CategoriaId { get; private set; }
-        public Guid? SubCategoriaId { get; private set; }
-        public Guid? FabricanteId { get; private set; }
-        
+        public string Nome { get;  set; }
+        public int QtdEstoque { get;  set; }
+        public int QtdEstoqueMin { get;  set; }
+        public bool Status { get;  set; }
+        public Guid? CategoriaId { get;  set; }
+        public Guid? SubCategoriaId { get;  set; }
+        public Guid? FabricanteId { get;  set; }
+        public Guid? OrganizadorId { get;  set; }
+
     }
 }

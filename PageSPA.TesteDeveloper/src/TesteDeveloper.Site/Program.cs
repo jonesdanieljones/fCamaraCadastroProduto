@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 
-namespace TesteDeveloperSite
+namespace TesteDeveloper.Site
 {
     public class Program
     {

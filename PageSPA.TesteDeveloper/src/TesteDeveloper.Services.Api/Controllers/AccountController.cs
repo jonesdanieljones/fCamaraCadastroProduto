@@ -13,6 +13,7 @@ using System.Security.Claims;
 using TesteDeveloper.Infra.CrossCutting.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
+using TesteDeveloper.Infra.CrossCutting.Identity.Authorization;
 
 namespace TesteDeveloper.Services.Api.Controllers
 {

@@ -2,11 +2,11 @@
 using AutoMapper;
 using Elmah.Io.AspNetCore;
 using Elmah.Io.Extensions.Logging;
-using TesteDeveloperInfra.CrossCutting.AspNetFilters;
-using TesteDeveloperInfra.CrossCutting.Bus;
-using TesteDeveloperInfra.CrossCutting.Identity.Data;
-using TesteDeveloperInfra.CrossCutting.Identity.Models;
-using TesteDeveloperInfra.CrossCutting.IoC;
+using TesteDeveloper.Infra.CrossCutting.AspNetFilters;
+using TesteDeveloper.Infra.CrossCutting.Bus;
+using TesteDeveloper.Infra.CrossCutting.Identity.Data;
+using TesteDeveloper.Infra.CrossCutting.Identity.Models;
+using TesteDeveloper.Infra.CrossCutting.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -17,7 +17,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TesteDeveloperSite
+namespace TesteDeveloper.Site
 {
     public class Startup
     {
@@ -50,8 +50,8 @@ namespace TesteDeveloperSite
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("PodeLerEventos", policy => policy.RequireClaim("Eventos","Ler"));
-                options.AddPolicy("PodeGravar", policy => policy.RequireClaim("Eventos", "Gravar"));
+                options.AddPolicy("PodeLerProdutos", policy => policy.RequireClaim("Produtos","Ler"));
+                options.AddPolicy("PodeGravar", policy => policy.RequireClaim("Produtos", "Gravar"));
             });
 
             services.AddLogging();

@@ -1,7 +1,8 @@
-﻿using TesteDeveloper.Interfaces;
+﻿
 using Microsoft.AspNetCore.Mvc;
+using TesteDeveloper.Domain.Interfaces;
 
-namespace TesteDeveloperSite.Controllers
+namespace TesteDeveloper.Site.Controllers
 {
     public class ErroController : Controller
     {

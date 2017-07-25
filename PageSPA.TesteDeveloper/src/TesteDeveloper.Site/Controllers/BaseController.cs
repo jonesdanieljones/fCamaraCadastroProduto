@@ -1,10 +1,10 @@
 ﻿
 using System;
-using TesteDeveloper.Core.Notifications;
-using TesteDeveloper.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using TesteDeveloper.Domain.Core.Notifications;
+using TesteDeveloper.Domain.Interfaces;
 
-namespace TesteDeveloperSite.Controllers
+namespace TesteDeveloper.Site.Controllers
 {
     public class BaseController : Controller
     {

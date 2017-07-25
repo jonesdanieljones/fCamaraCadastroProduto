@@ -29,6 +29,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.IdentityModel.Tokens;
 using Swashbuckle.AspNetCore.Swagger;
+using TesteDeveloper.Infra.CrossCutting.Identity.Authorization;
 
 namespace TesteDeveloper.Services.Api
 {
