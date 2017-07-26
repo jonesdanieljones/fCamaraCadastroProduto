@@ -66,6 +66,7 @@ namespace TesteDeveloper.Domain.Produtos.CommandHandlers
                                     message.Status,
                                     null,
                                     null,
+                                    null,
                                     null);
             if (!ProdutoValido(produto)) return;
             _produtoRepository.Update(produto);

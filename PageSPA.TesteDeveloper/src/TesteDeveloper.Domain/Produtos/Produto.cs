@@ -96,7 +96,7 @@ namespace TesteDeveloper.Domain.Produtos
                 }
                 if (usuarioId != null)
                 {
-                    produto.UsuarioId = new Usuario(usuarioId.Value);
+                    produto.Usuario = new Usuario(usuarioId.Value);
                 }
                 return produto;
             }

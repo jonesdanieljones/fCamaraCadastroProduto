@@ -7,6 +7,11 @@ namespace TesteDeveloper.Domain.Usuarios
 {
     public class Usuario : Entity<Usuario>
     {
+        public Usuario(Guid id)
+        {
+            Id = id;
+        }
+
         public string Nome { get; private set; }
         public string CPF { get; private set; }
         public string Email { get; private set; }
@@ -18,10 +23,7 @@ namespace TesteDeveloper.Domain.Usuarios
             CPF = cpf;
             Email = email;
         }
-        public Usuario(Guid id)
-        {
-            Id = id;
-        }
+       
         // EF Construtor
         protected Usuario() { }
 
