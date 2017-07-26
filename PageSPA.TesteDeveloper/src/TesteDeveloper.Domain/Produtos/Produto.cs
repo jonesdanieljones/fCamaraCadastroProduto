@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TesteDeveloper.Domain.Core.Models;
+using TesteDeveloper.Domain.Usuarios;
 
 namespace TesteDeveloper.Domain.Produtos
 {
@@ -29,6 +30,7 @@ namespace TesteDeveloper.Domain.Produtos
         public Categoria Categoria { get; private set; }
         public SubCategoria SubCategoria { get; private set; }
         public Fabricante Fabricante { get; private set; }
+        public Usuario Usuario { get; private set; }
         public string Modelo { get; private set; }
         public string Nome { get;  private set; }
         public int QtdEstoque { get; private set; }
@@ -37,6 +39,7 @@ namespace TesteDeveloper.Domain.Produtos
         public Guid? CategoriaId { get; private set; }
         public Guid? SubCategoriaId { get; private set; }
         public Guid? FabricanteId { get; private set; }
+        public Guid? UsuarioId { get; private set; }
         public override bool EhValido()
         {
             Validar();
@@ -67,7 +70,8 @@ namespace TesteDeveloper.Domain.Produtos
                                                       bool status, 
                                                       Guid? categoriaId, 
                                                       Guid? subCategoriaId,
-                                                      Guid? fabricanteId)
+                                                      Guid? fabricanteId,
+                                                      Guid? usuarioId)
             {
                 var produto = new Produto()
                 {
@@ -90,7 +94,10 @@ namespace TesteDeveloper.Domain.Produtos
                 {
                     produto.Fabricante = new Fabricante(fabricanteId.Value);
                 }
-
+                if (usuarioId != null)
+                {
+                    produto.UsuarioId = new Usuario(usuarioId.Value);
+                }
                 return produto;
             }
 
