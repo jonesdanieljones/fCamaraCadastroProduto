@@ -14,7 +14,7 @@ namespace TesteDeveloper.Domain.Usuarios
 
         public string Nome { get; private set; }
         public string CPF { get; private set; }
-        public string Email { get; private set; }
+        public string Email { get; private set; }        
 
         public Usuario(Guid id, string nome, string cpf, string email)
         {
